@@ -34,12 +34,20 @@ class ImagelintTest extends TestCase
     }
     
     public function testInvalidURL() {
-        $this->expectException(\InvalidArgumentException::class);
+        if(method_exists($this, 'setExpectedException')) {
+            $this->setExpectedException(\InvalidArgumentException::class);
+        } else {
+            $this->expectException(\InvalidArgumentException::class);
+        }
         Imagelint::get('ftp://example.com/foo/image.jpg');
     }
 
     public function testInvalidURLWithoutProtocol() {
-        $this->expectException(\InvalidArgumentException::class);
+        if(method_exists($this,'setExpectedException')) {
+            $this->setExpectedException(\InvalidArgumentException::class);
+        } else {
+            $this->expectException(\InvalidArgumentException::class);
+        }
         $this->assertEquals(Imagelint::get('example.com/foo/image.jpg'),'https://a1.imagelint.com/example.com/foo/image.jpg');
     }
 }
