@@ -18,7 +18,7 @@ class Imagelint
      *
      * @return string
      */
-    public static function get($url, $params = []) {
+    public static function get($url, $params = array()) {
         if(!self::isValidURL($url)) {
             throw new \InvalidArgumentException('Your URL ' . $url . ' is invalid. Imagelint currently supports http and https URLs.');
         }
