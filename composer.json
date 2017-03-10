@@ -1,0 +1,41 @@
+{
+    "name": "imagelint/imagelint-php",
+    "description": "A class to convert your image URLs to Imagelint URLs",
+    "type": "library",
+    "keywords": [
+        "imagelint",
+        "image-optimization",
+        "image-compression",
+        "speed",
+        "compression"
+    ],
+    "homepage": "https://github.com/imagelint/imagelint-php",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Mohr",
+            "email": "p.mohr@sopamo.de",
+            "role": "lead"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/imagelint/imagelint-php/issues"
+    },
+    "require": {
+        "php": "^5.3 || ^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Imagelint\\": "src/Imagelint"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Imagelint\\Tests\\": "tests/"
+        }
+    }
+}
+
