@@ -61,11 +61,11 @@ class Imagelint
      * @return array
      */
     private static function getURLParams($params) {
-        $mappings = [
+        $mappings = array(
             'width' => 'il-width',
             'height' => 'il-height',
             'dpr' => 'il-dpr'
-        ];
+        );
         $newParams = [];
         foreach($params as $key => $value) {
             if(isset($mappings[$key]) && $value) {

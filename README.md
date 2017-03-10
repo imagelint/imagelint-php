@@ -1,6 +1,7 @@
 # Imagelint PHP
 
 [![Build Status](https://travis-ci.org/imagelint/imagelint-php.svg?branch=master)](https://travis-ci.org/imagelint/imagelint-php)
+[![codecov](https://codecov.io/gh/imagelint/imagelint-php/branch/master/graph/badge.svg)](https://codecov.io/gh/imagelint/imagelint-php)
 
 A class to convert your image URLs to Imagelint URLs
 
