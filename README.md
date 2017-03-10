@@ -1,45 +1,29 @@
-[![Build Status](https://travis-ci.org/sebastianbergmann/php-timer.svg?branch=master)](https://travis-ci.org/sebastianbergmann/php-timer)
-
 # Imagelint PHP
 
-Utility class for timing things, factored out of PHPUnit into a stand-alone component.
+A class to convert your image URLs to Imagelint URLs
 
 ## Installation
 
-You can add this library as a local, per-project dependency to your project using [Composer](https://getcomposer.org/):
+You can add this library to your project using [Composer](https://getcomposer.org/):
 
-    composer require phpunit/php-timer
-
-If you only need this library during development, for instance to run your project's test suite, then you should add it as a development-time dependency:
-
-    composer require --dev phpunit/php-timer
+    composer require imagelint/imagelint-php
 
 ## Usage
 
-### Basic Timing
+### Basic usage
 
 ```php
-PHP_Timer::start();
-
-// ...
-
-$time = PHP_Timer::stop();
-var_dump($time);
-
-print PHP_Timer::secondsToTimeString($time);
+Imagelint\Imagelint::get('http://yoursite.com/img/cat.jpg')
 ```
 
 The code above yields the output below:
 
-    double(1.0967254638672E-5)
-    0 ms
+    https://a1.imagelint.com/yoursite.com/img/cat.jpg
 
-### Resource Consumption Since PHP Startup
+### You can also use parameters
 
 ```php
-print PHP_Timer::resourceUsage();
+Imagelint\Imagelint::get('http://yoursite.com/img/cat.jpg', ['width' => 200])
 ```
 
-The code above yields the output below:
-
-    Time: 0 ms, Memory: 0.50MB
+The code above scales the image to a width of 200px.
