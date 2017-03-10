@@ -1,5 +1,7 @@
 # Imagelint PHP
 
+[![Build Status](https://travis-ci.org/imagelint/imagelint-php.svg?branch=master)](https://travis-ci.org/imagelint/imagelint-php)
+
 A class to convert your image URLs to Imagelint URLs
 
 ## Installation
