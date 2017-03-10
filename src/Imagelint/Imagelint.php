@@ -66,7 +66,7 @@ class Imagelint
             'height' => 'il-height',
             'dpr' => 'il-dpr'
         );
-        $newParams = [];
+        $newParams = array();
         foreach($params as $key => $value) {
             if(isset($mappings[$key]) && $value) {
                 $newParams[$mappings[$key]] = $value;
