@@ -22,7 +22,8 @@
         "issues": "https://github.com/imagelint/imagelint-php/issues"
     },
     "require": {
-        "php": "^5.3 || ^7.0"
+        "php": "^5.3 || ^7.0",
+        "voku/simple_html_dom": "^2.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"

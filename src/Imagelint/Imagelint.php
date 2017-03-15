@@ -27,6 +27,24 @@ class Imagelint
     }
 
     /**
+     * Checks if the given URL can be handled by Imagelint
+     *
+     * @param $url
+     *
+     * @return bool
+     */
+    public static function isValidURL($url) {
+        if(filter_var($url,FILTER_VALIDATE_URL) === false) {
+            return false;
+        }
+        if(substr($url,0,7) !== 'http://' && substr($url,0,8) !== 'https://') {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
      * Creates the Imagelint URL
      * 
      * @param $url
@@ -102,22 +120,5 @@ class Imagelint
      */
     private static function removeProtocol($url) {
         return preg_replace('/^https?:\/\//', '', $url);
-    }
-
-    /**
-     * Checks if the given URL can be handled by Imagelint
-     * 
-     * @param $url
-     *
-     * @return bool
-     */
-    private static function isValidURL($url) {
-        if(filter_var($url,FILTER_VALIDATE_URL) === false) {
-            return false;
-        }
-        if(substr($url, 0, 7) !== 'http://' && substr($url, 0, 8) !== 'https://') {
-            return false;
-        }
-        return true;
     }
 }
