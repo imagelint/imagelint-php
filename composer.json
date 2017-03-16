@@ -28,6 +28,9 @@
     "require-dev": {
         "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.0"
     },
+    "suggest": {
+        "laravel/framework": "Required to use the Laravel integration",
+    }
     "autoload": {
         "psr-4": {
             "Imagelint\\": "src/Imagelint"
