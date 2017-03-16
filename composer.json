@@ -30,7 +30,7 @@
     },
     "suggest": {
         "laravel/framework": "Required to use the Laravel integration",
-    }
+    },
     "autoload": {
         "psr-4": {
             "Imagelint\\": "src/Imagelint"
