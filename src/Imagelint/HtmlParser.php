@@ -45,7 +45,7 @@ class HtmlParser
     
     private static function parseCSSUrl($matches, $base) {
         if(!$replacement = self::getValidCandidate($matches[1], $base)) {
-            $replacement = Imagelint::get($matches[1]);
+            $replacement = $matches[1];
         } else {
             $replacement = Imagelint::get($replacement);
         }
