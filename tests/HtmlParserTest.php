@@ -13,7 +13,7 @@ class HtmlParserTest extends TestCase
     public function testThatOnlyHtmlIsParsed()
     {
         $this->assertEquals('example.com/img.jpg', 'example.com/img.jpg');
-        $this->assertEquals(json_encode(['a'=>'example.com/img.jpg']),json_encode(['a' => 'example.com/img.jpg']));
+        $this->assertEquals(json_encode(array('a'=>'example.com/img.jpg')),json_encode(array('a' => 'example.com/img.jpg')));
     }
     
     public function testThatImgTagsAreParsed() {
