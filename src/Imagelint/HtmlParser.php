@@ -1,6 +1,7 @@
 <?php
 namespace Imagelint;
 
+use Exception;
 use voku\helper\HtmlDomParser;
 
 class HtmlParser
@@ -8,28 +9,46 @@ class HtmlParser
     const CSSURLREGEX = "|url\\(['\"]*(.*?)['\"]*\\)|i";
 
     static function parse($input, $base = null) {
-        $html = HtmlDomParser::str_get_html($input);
+        try {
+            $html = HtmlDomParser::str_get_html($input);
+        } catch(Exception $e) {
+            return $input;
+        }
         foreach($html->find('img') as $element) {
             $src = $element->src;
-            if(!in_array(pathinfo($src,PATHINFO_EXTENSION), ['jpg', 'jpeg', 'png'])) {
-                continue;
-            }
-            if(substr($src, 0, 1) === '/') {
-                $src = $base . $src;
-            }
-            if(!Imagelint::isValidURL($src)) {
+            if(!$src = self::getValidCandidate($src, $base)) {
                 continue;
             }
             $element->src = Imagelint::get($src);
         }
         foreach($html->find('*[style]') as $element) {
-            $element->style = preg_replace_callback(self::CSSURLREGEX,__CLASS__ . '::parseCSSUrl',$element->style);
+            $element->style = preg_replace_callback(self::CSSURLREGEX,function($matches) use($base) {
+                return self::parseCSSUrl($matches, $base);
+            },$element->style);
         }
 
-        return $html;
+        return (string)$html;
     }
 
-    static function parseCSSUrl($matches) {
-        return 'url("' . Imagelint::get($matches[1]) . '")';
+    private static function getValidCandidate($path, $base) {
+        if(!in_array(pathinfo($path,PATHINFO_EXTENSION),['jpg','jpeg','png'])) {
+            return false;
+        }
+        if(substr($path,0,1) === '/') {
+            $path = $base . $path;
+        }
+        if(!Imagelint::isValidURL($path)) {
+            return false;
+        }
+        return $path;
+    }
+    
+    private static function parseCSSUrl($matches, $base) {
+        if(!$replacement = self::getValidCandidate($matches[1], $base)) {
+            $replacement = Imagelint::get($matches[1]);
+        } else {
+            $replacement = Imagelint::get($replacement);
+        }
+        return 'url("' . $replacement . '")';
     }
 }
