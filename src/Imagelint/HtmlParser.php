@@ -31,7 +31,7 @@ class HtmlParser
     }
 
     private static function getValidCandidate($path, $base) {
-        if(!in_array(pathinfo($path,PATHINFO_EXTENSION),['jpg','jpeg','png'])) {
+        if(!in_array(pathinfo($path,PATHINFO_EXTENSION),array('jpg','jpeg','png'))) {
             return false;
         }
         if(substr($path,0,1) === '/') {
