@@ -22,7 +22,7 @@ class HtmlParser
             $element->src = Imagelint::get($src);
         }
         foreach($html->find('*[style]') as $element) {
-            $element->style = preg_replace_callback(self::CSSURLREGEX,function($matches) use($base) {
+            $element->style = preg_replace_callback(self::CSSURLREGEX, function($matches) use($base) {
                 return self::parseCSSUrl($matches, $base);
             },$element->style);
         }
@@ -34,8 +34,14 @@ class HtmlParser
         if(!in_array(pathinfo($path,PATHINFO_EXTENSION),array('jpg','jpeg','png'))) {
             return false;
         }
+        
         if(substr($path,0,1) === '/') {
             $path = $base . $path;
+        } else {
+            // Make sure the hostnames match
+            if(parse_url($base, PHP_URL_HOST) !== parse_url($path, PHP_URL_HOST)) {
+                return false;
+            }
         }
         if(!Imagelint::isValidURL($path)) {
             return false;

@@ -17,7 +17,7 @@ class HtmlParserTest extends TestCase
     }
     
     public function testThatImgTagsAreParsed() {
-        $a = HtmlParser::parse('<!DOCTYPE html><html><body><img src="http://example.com/img.jpg" </body></html>');
+        $a = HtmlParser::parse('<!DOCTYPE html><html><body><img src="http://example.com/img.jpg" </body></html>', 'http://example.com');
         $b = <<<EOT
 <!DOCTYPE html>
 <html><body><img src="https://a1.imagelint.com/example.com/img.jpg"></body></html>
@@ -27,7 +27,7 @@ EOT;
     }
     
     public function testThatStyleAttributesAreParsed() {
-        $a = HtmlParser::parse('<!DOCTYPE html><html><body><div style="background: url(http://example.com/img.jpg)"></div></body></html>');
+        $a = HtmlParser::parse('<!DOCTYPE html><html><body><div style="background: url(http://example.com/img.jpg)"></div></body></html>','http://example.com');
         $b = <<<EOT
 <!DOCTYPE html>
 <html><body><div style='background: url("https://a1.imagelint.com/example.com/img.jpg")'></div></body></html>
@@ -49,6 +49,15 @@ EOT;
         $b = <<<EOT
 <!DOCTYPE html>
 <html><body><img src="/img.jpg"></body></html>
+EOT;
+        $this->assertEquals($a,$b);
+    }
+
+    public function testThatURLsFromInvalidHostsAreNotTouched() {
+        $a = HtmlParser::parse('<!DOCTYPE html><html><body><img src="http://example.org/img.jpg" </body></html>', 'http://example.com');
+        $b = <<<EOT
+<!DOCTYPE html>
+<html><body><img src="http://example.org/img.jpg"></body></html>
 EOT;
         $this->assertEquals($a,$b);
     }
