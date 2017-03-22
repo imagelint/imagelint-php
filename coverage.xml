@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1490193510">
+  <project timestamp="1490193510">
+    <package name="Imagelint">
+      <file name="/Users/paulmohr/Arbeit/dev/imagelint/packages/imagelint-php/src/Imagelint/HtmlParser.php">
+        <class name="HtmlParser" namespace="Imagelint">
+          <metrics complexity="13" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="27" coveredstatements="0" elements="31" coveredelements="0"/>
+        </class>
+        <line num="11" type="method" name="parse" complexity="5" crap="30" count="0"/>
+        <line num="13" type="stmt" count="0"/>
+        <line num="14" type="stmt" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="17" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="19" type="stmt" count="0"/>
+        <line num="20" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <line num="25" type="method" name="anonymous function" complexity="1" crap="2" count="0"/>
+        <line num="26" type="stmt" count="0"/>
+        <line num="27" type="stmt" count="0"/>
+        <line num="28" type="stmt" count="0"/>
+        <line num="30" type="stmt" count="0"/>
+        <line num="33" type="method" name="getValidCandidate" visibility="private" complexity="5" crap="30" count="0"/>
+        <line num="34" type="stmt" count="0"/>
+        <line num="35" type="stmt" count="0"/>
+        <line num="38" type="stmt" count="0"/>
+        <line num="39" type="stmt" count="0"/>
+        <line num="40" type="stmt" count="0"/>
+        <line num="42" type="stmt" count="0"/>
+        <line num="43" type="stmt" count="0"/>
+        <line num="46" type="stmt" count="0"/>
+        <line num="47" type="stmt" count="0"/>
+        <line num="49" type="stmt" count="0"/>
+        <line num="52" type="method" name="parseCSSUrl" visibility="private" complexity="2" crap="6" count="0"/>
+        <line num="53" type="stmt" count="0"/>
+        <line num="54" type="stmt" count="0"/>
+        <line num="55" type="stmt" count="0"/>
+        <line num="56" type="stmt" count="0"/>
+        <line num="58" type="stmt" count="0"/>
+        <metrics loc="59" ncloc="57" classes="1" methods="4" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="0" elements="33" coveredelements="0"/>
+      </file>
+      <file name="/Users/paulmohr/Arbeit/dev/imagelint/packages/imagelint-php/src/Imagelint/Imagelint.php">
+        <class name="Imagelint" namespace="Imagelint">
+          <metrics complexity="18" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="29" elements="37" coveredelements="37"/>
+        </class>
+        <line num="21" type="method" name="get" visibility="public" complexity="2" crap="2" count="7"/>
+        <line num="22" type="stmt" count="7"/>
+        <line num="23" type="stmt" count="2"/>
+        <line num="26" type="stmt" count="5"/>
+        <line num="36" type="method" name="isValidURL" visibility="public" complexity="4" crap="4" count="7"/>
+        <line num="37" type="stmt" count="7"/>
+        <line num="38" type="stmt" count="1"/>
+        <line num="40" type="stmt" count="6"/>
+        <line num="41" type="stmt" count="1"/>
+        <line num="44" type="stmt" count="5"/>
+        <line num="55" type="method" name="buildImagelintURL" visibility="private" complexity="1" crap="1" count="5"/>
+        <line num="56" type="stmt" count="5"/>
+        <line num="65" type="method" name="stringifyParams" visibility="private" complexity="3" crap="3" count="5"/>
+        <line num="66" type="stmt" count="5"/>
+        <line num="67" type="stmt" count="5"/>
+        <line num="68" type="stmt" count="4"/>
+        <line num="70" type="stmt" count="1"/>
+        <line num="71" type="stmt" count="1"/>
+        <line num="81" type="method" name="getURLParams" visibility="private" complexity="4" crap="4" count="5"/>
+        <line num="83" type="stmt" count="5"/>
+        <line num="84" type="stmt" count="5"/>
+        <line num="86" type="stmt" count="5"/>
+        <line num="87" type="stmt" count="5"/>
+        <line num="88" type="stmt" count="5"/>
+        <line num="89" type="stmt" count="1"/>
+        <line num="90" type="stmt" count="1"/>
+        <line num="91" type="stmt" count="1"/>
+        <line num="92" type="stmt" count="5"/>
+        <line num="93" type="stmt" count="5"/>
+        <line num="103" type="method" name="sanitize" visibility="private" complexity="1" crap="1" count="5"/>
+        <line num="104" type="stmt" count="5"/>
+        <line num="107" type="method" name="removeFragment" visibility="private" complexity="2" crap="2" count="5"/>
+        <line num="108" type="stmt" count="5"/>
+        <line num="109" type="stmt" count="4"/>
+        <line num="111" type="stmt" count="1"/>
+        <line num="121" type="method" name="removeProtocol" visibility="private" complexity="1" crap="1" count="5"/>
+        <line num="122" type="stmt" count="5"/>
+        <metrics loc="124" ncloc="69" classes="1" methods="8" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="29" coveredstatements="29" elements="37" coveredelements="37"/>
+      </file>
+    </package>
+    <package name="Imagelint\Laravel">
+      <file name="/Users/paulmohr/Arbeit/dev/imagelint/packages/imagelint-php/src/Imagelint/Laravel/ImagelintMiddleware.php">
+        <class name="ImagelintMiddleware" namespace="Imagelint\Laravel">
+          <metrics complexity="2" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="4" coveredstatements="0" elements="6" coveredelements="0"/>
+        </class>
+        <line num="13" type="method" name="handle" visibility="public" complexity="1" crap="2" count="0"/>
+        <line num="15" type="stmt" count="0"/>
+        <line num="18" type="stmt" count="0"/>
+        <line num="20" type="method" name="anonymous function" complexity="1" crap="2" count="0"/>
+        <line num="21" type="stmt" count="0"/>
+        <line num="22" type="stmt" count="0"/>
+        <line num="23" type="stmt" count="0"/>
+        <line num="24" type="stmt" count="0"/>
+        <metrics loc="25" ncloc="22" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
+      </file>
+    </package>
+    <metrics files="3" loc="208" ncloc="148" classes="3" methods="14" coveredmethods="8" conditionals="0" coveredconditionals="0" statements="64" coveredstatements="29" elements="78" coveredelements="37"/>
+  </project>
+</coverage>

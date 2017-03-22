@@ -10,4 +10,12 @@
     <testsuite>
         <directory>tests</directory>
     </testsuite>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src</directory>
+            <exclude>
+                <directory>./src/Imagelint/Laravel</directory>
+            </exclude>
+        </whitelist>
+    </filter>
 </phpunit>
