@@ -6,6 +6,7 @@ use Imagelint\Imagelint;
 use PHPUnit\Framework\TestCase;
 
 /**
+ * @covers \Imagelint\HtmlParser
  * @covers \Imagelint\Imagelint
  */
 class HtmlParserTest extends TestCase
